@@ -67,9 +67,9 @@ logistic_regression_score = accuracy_score(y_test, logistic_regression.predict(X
 print("Score de performance du modèle de régression logistique: " + str(logistic_regression_score))
 
 predictions = logistic_regression.predict(X_test)
-confusion_matrix = confusion_matrix(y_test, predictions)
+logistic_regression_confusion_matrix = confusion_matrix(y_test, predictions)
 print("Matrice de confusion pour le modèle de régression logistique: ")
-print(confusion_matrix)
+print(logistic_regression_confusion_matrix)
 
 # Réduction de dimensionnalité
 print("--------------RÉDUCTION DE DIMENSIONNALITÉ--------------")
@@ -106,6 +106,6 @@ extremely_randomized_trees_score = accuracy_score(y_test, extremely_randomized_t
 print("Score de performance du modèle Extremely Randomized Trees: " + str(extremely_randomized_trees_score))
 
 predictions = extremely_randomized_trees_model.predict(X_test)
-confusion_matrix = confusion_matrix(y_test, predictions)
+extremely_randomized_trees_confusion_matrix = confusion_matrix(y_test, predictions)
 print("Matrice de confusion pour le modèle d'arbre de classification Extremely Randomized Trees: ")
-print(confusion_matrix)
+print(extremely_randomized_trees_confusion_matrix)

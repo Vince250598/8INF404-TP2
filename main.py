@@ -71,6 +71,11 @@ logistic_regression_confusion_matrix = confusion_matrix(y_test, predictions)
 print("Matrice de confusion pour le modèle de régression logistique: ")
 print(logistic_regression_confusion_matrix)
 
+sensibility = logistic_regression_confusion_matrix[0][0]/(logistic_regression_confusion_matrix[0][0] + logistic_regression_confusion_matrix[1][0])
+print("Sensibilité: " + str(sensibility))
+specificity = logistic_regression_confusion_matrix[1][1]/(logistic_regression_confusion_matrix[1][1] + logistic_regression_confusion_matrix[0][1])
+print("Spécificité: " + str(specificity))
+
 # Réduction de dimensionnalité
 print("--------------RÉDUCTION DE DIMENSIONNALITÉ--------------")
 
@@ -109,3 +114,8 @@ predictions = extremely_randomized_trees_model.predict(X_test)
 extremely_randomized_trees_confusion_matrix = confusion_matrix(y_test, predictions)
 print("Matrice de confusion pour le modèle d'arbre de classification Extremely Randomized Trees: ")
 print(extremely_randomized_trees_confusion_matrix)
+
+sensibility = extremely_randomized_trees_confusion_matrix[0][0]/(extremely_randomized_trees_confusion_matrix[0][0] + extremely_randomized_trees_confusion_matrix[1][0])
+print("Sensibilité: " + str(sensibility))
+specificity = extremely_randomized_trees_confusion_matrix[1][1]/(extremely_randomized_trees_confusion_matrix[1][1] + extremely_randomized_trees_confusion_matrix[0][1])
+print("Spécificité: " + str(specificity))
